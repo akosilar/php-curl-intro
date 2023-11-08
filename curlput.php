@@ -28,12 +28,15 @@ if ($e = curl_error($ch)) {
     echo $e;
 } else {
     $decoded = json_decode($resp, true);
+    print_r($resp);
+    print_r($decoded);
+    var_dump(json_encode($decoded));
     // var_dump(get_object_vars($decoded));
     // print_r($decoded);
-    foreach ($decoded as $key => $value) {
-        # code...
-        echo $key . ':' . $value . '<br>';
-    }
+    // foreach ($decoded as $key => $value) {
+    //     # code...
+    //     echo $key . ':' . $value . '<br>';
+    // }
 }
 
 curl_close($ch);
